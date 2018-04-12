@@ -88,6 +88,122 @@ emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
 	\]
 \end{frame}
 
+%-------ZADANIE 1-----------
+
+\begin{frame}\frametitle{Zadanie 1}\framesubtitle{Badanie linii pierwiastkowych}
+Zbadaj wykresy linii pierwiastkowych dla następujących układów:
+\[
+a) ~~ G(s) = \frac{1}{(s+1)(5s+1)}
+\]
+
+\[
+b) ~~ G(s) = \frac{0,5s + 1}{(s+1)(5s+1)}
+\]
+
+\[
+c) ~~ G(s) = \frac{1}{(s+1)(5s+1)(0,5s + 1)}
+\]
+\end{frame}
+
+%-----------A----------------
+%-----------B----------------
+%-----------C----------------
+
+\begin{frame}[fragile]\frametitle{Zadanie 1}\framesubtitle{Badanie linii pierwiastkowych - algorytm i kod}
+
+\begin{lstlisting}[centering]
+% Zadanie 1a
+% Utworzenie ukladu dynamicznego
+sys = zpk([],[0 -1 -5], 5);
+
+% Narysowanie linii pierwiastkowych
+rlocus(sys);
+
+%-----------------------------------
+
+% Zadanie 1b
+% Utworzenie ukladu dynamicznego
+sys = zpk(-2, [-1 -1/5], 1/5);
+
+% Narysowanie linii pierwiastkowych
+rlocus(sys);
+
+%-----------------------------------
+
+% Zadanie 1c
+% Utworzenie ukladu dynamicznego
+sys = zpk([], [-1 -1/5 -2], 10/25);
+
+% Narysowanie linii pierwiastkowych
+rlocus(sys);
+
+% Obliczenie K dla zadanego kata
+[K, bieguny] = rlocfind(sys);
+
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}\frametitle{Zadanie 1}\framesubtitle{Badanie linii pierwiastkowych}
+	Zbadaj wykresy linii pierwiastkowych dla następujących układów:
+	\[
+	a) ~~ G(s) = \frac{1}{(s+1)(5s+1)}
+	\]
+	
+	\[
+	b) ~~ G(s) = \frac{0,5s + 1}{(s+1)(5s+1)}
+	\]
+	
+	\[
+	c) ~~ G(s) = \frac{1}{(s+1)(5s+1)(0,5s + 1)}
+	\]
+\end{frame}
+
+\begin{frame}\frametitle{Zadanie 1a}\framesubtitle{Badanie linii pierwiastkowych - wykonanie}
+
+\centering	\includegraphics[scale=0.45]{zadanie1_a.png}
+
+\end{frame}
+
+\begin{frame}\frametitle{Zadanie 1b}\framesubtitle{Badanie linii pierwiastkowych - wykonanie}
+	
+	\centering	\includegraphics[scale=0.45]{zadanie1_b.png}
+	
+\end{frame}
+
+\begin{frame}\frametitle{Zadanie 1c}\framesubtitle{Badanie linii pierwiastkowych - wykonanie}
+	
+	\centering	\includegraphics[scale=0.45]{zadanie1_c1.png}
+	
+\end{frame}
+
+\begin{frame}\frametitle{Zadanie 1c}\framesubtitle{Badanie linii pierwiastkowych - wykonanie}
+	
+	\centering	\includegraphics[scale=0.45]{zadanie1_c2.png}
+	
+\end{frame}
+
+\begin{frame}\frametitle{Zadanie 1c}\framesubtitle{Badanie linii pierwiastkowych - wykonanie}
+	
+	\centering	\includegraphics[scale=0.45]{zadanie1_c.png}
+	
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Zadanie 1c}\framesubtitle{Badanie linii pierwiastkowych - wykonanie}
+	
+Z sytemu z podpunktu c wynika, że układ staje się niestabilny dla wzmocnienia krytycznego równego:
+	
+\begin{lstlisting}
+>> zadanie_1.m
+Select a point in the graphics window
+	
+	selected_point =
+	
+	0.0002 + 1.6126i
+
+\end{lstlisting}	
+\end{frame}
+
 
 %-------ZADANIE 2-----------
 %-----------A---------------
