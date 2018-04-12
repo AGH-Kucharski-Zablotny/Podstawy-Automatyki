@@ -15,7 +15,7 @@
 \author{Piotr Kucharski i Dominik Zabłotny}
 \website{\url{https://github.com/AGH-Kucharski-Zablotny/Podstawy-Automatyki}}
 \institute{Wydział Elekrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej}
-\date{\today}
+\date{13 kwietnia 2018}
 
 \lstset{
 language=Matlab,%
@@ -47,7 +47,7 @@ emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
     \begin{enumerate}[a)]
         \item Wykorzystując poznane narzędzia dobierz regulator proporcjonalny (wzmocnienie K) aby układ zamknięty miał współczynnik tłumienia $\xi = 0.707$ (wtedy $\phi = 45\degres$). Narysuj odpowiedź skokową układu zamkniętego.
         
-        \centering{\includegraphics[scale=0.65]{uklad_2.png}}
+        \centering{\includegraphics[scale=0.65]{uklad-2.png}}
         
         %\item Dodaj do układu kompensator (człon przyspieszająco-opóźniający fazę) o transmitancji:
         %\[
@@ -79,6 +79,9 @@ sys_zamk = feedback(K * sys, 1);
 
 % Odpowiedz ukladu zamknietego na skok jednostkowy
 step(sys_zamk);                     
+
+% Wyswietlenie K w tytule wykresu
+title(['Step response, K = ' num2str(K)]);
 	\end{lstlisting}
 \end{frame}
 
@@ -99,14 +102,24 @@ step(sys_zamk);
 \end{frame}
 
 \begin{frame}\frametitle{Zadanie 2a}\framesubtitle{Dobór regulatora proporcjonalnego - wykonanie}
-\centering	\includegraphics[scale=0.5]{a-sys-zamk.png}
+\centering	\includegraphics[scale=0.5]{a-sys-zamk-k.png}
 \end{frame}
 
 %-----------B------------
 
 \begin{frame}\frametitle{Zadanie 2b}\framesubtitle{Dobór regulatora proporcjonalnego z kompensatorem}
 	\begin{enumerate}[b)]
+		\item Dodaj do układu kompensator (człon przyspieszająco-opóźniający fazę) o transmitancji:
+		\[
+			G_c(s) = \frac{(s+1)}{(0.1s+1)}
+		\]	
+		czyli utwórz następujący układ:
 		
+		
+		\centering{\includegraphics[scale=0.65]{uklad-2-b.png}}
+		
+		
+		\flushleft Dobierz wzmocnienie K aby układ zamknięty miał taki sam współczynnik tłumienia jak w punkcie a). Narysuj odpowiedź skokową układu zamkniętego.
 	\end{enumerate}
 \end{frame}
 
@@ -130,6 +143,8 @@ pause();
 sys_zamk_b = feedback(K * system_zastepczy, 1);
 % Odpowiedz ukladu zastepczego na skok jednostkowy
 step(sys_zamk_b);
+% Wyswietlenie K w tytule wykresu
+title(['Step response, K = ' num2str(K)]);
 	\end{lstlisting}
 \end{frame}
 
@@ -150,12 +165,20 @@ step(sys_zamk_b);
 \end{frame}
 
 \begin{frame}\frametitle{Zadanie 2b}\framesubtitle{Dobór regulatora proporcjonalnego z kompensatorem - wykonanie}
-\centering	\includegraphics[scale=0.5]{b-sys-zamk.png}
+\centering	\includegraphics[scale=0.5]{b-sys-zamk-k.png}
 \end{frame}
 
 %------------OBA-------------
 \begin{frame}\frametitle{Zadanie 2}\framesubtitle{Dobór regulatora proporcjonalnego - porównanie}
 \centering	\includegraphics[scale=0.5]{step-oba.png}
+\end{frame}
+
+\begin{frame}\frametitle{Zadanie 2}\framesubtitle{Dobór regulatora proporcjonalnego - wnioski}
+	\begin{itemize}
+		\item Układ zamknięty z zadanym współczynnikiem tłumienia, z kompensatorem oraz bez niego jest stabilny.
+		\item Dodanie kompensatora do systemu spowodowało polepszenie właściwości dynamicznych układu - szybszą stabilizację.
+		\item 
+	\end{itemize}
 \end{frame}
 
 
