@@ -39,6 +39,59 @@ emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
 
 \titleframe[pl]
 
+\begin{frame}\frametitle{Wprowadzenie}\framesubtitle{}
+	\begin{itemize}
+		\item Wpływ sprzężenia zwrotnego na dynamikę układu zamkniętego określa się za pomocą pierwiastków jego biegunów na płaszczyźnie zespolonej.
+		
+		\item Przykłady:
+	
+	
+		\centering \includegraphics[scale=0.2]{tabela.png}
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}\frametitle{Wprowadzenie}\framesubtitle{}
+	W dziedzinie Laplace'a wnioskujemy:
+	\begin{enumerate}
+		\item Jeżeli pierwiastki równania charakterystycznego leżą w lewej półpłaszczyźnie zespolonej, to układ jest stabilny.
+		
+		\item Jeżeli wszystkie pierwiastki leżą na osi rzeczywistej to układ jest przetłumiony lub tłumiony krytycznie.
+		
+		\item Im większe ujemne wartości pierwiastków równania charakterystycznego układu tym szybsza jest dynamika układu.
+		
+		\item Im bliżej osi urojonej leżą pierwiastki równania charakterystycznego tym większy wpływ na dynamikę mają one.
+		
+		\item Im większe współczynniki części urojonej pary sprzężonej pierwiastków równania charakterystycznego tym bardziej oscylacyjny jest układ.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Wprowadzenie}\framesubtitle{}
+	Linie pierwiastkowe - wykres pierwiastków równania charakterystycznego ulładu zamkniętego zależne od wartości wzmocnienia K.
+	
+	Własności linii pierwiastkowych:
+	\begin{enumerate}
+		\item Początek linii pierwiastkowych leży w miejscu odpowiadającym biegunom układu otwartego.
+		
+		\item Linie kończą się w zerach transmitacji.
+		
+		\item Liczba linii pierwiastkowych odpowiada liczbie biegunów.
+		
+		\item Linie będące wykresami pierwiastków zespolonych występują w postaci par sprzężonych.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Wprowadzenie}\framesubtitle{}
+	Częstotliwość własna - szybkość drgań układu po wytrąceniu z położenia równowagi oraz pozostawionego bez żadnego wpływu z zewnątrz. Liczbowo jest ona równa odległości biegunów od początku układu współrzędnych:
+	\[
+		\omega = \frac{1}{T}
+	\]
+\end{frame}
+
+
+%-------ZADANIE 2-----------
+%-----------A---------------
+
 \begin{frame}\frametitle{Zadanie 2}\framesubtitle{Dobór regulatora proporcjonalnego}
 	Dany jest układ:
 	\[
@@ -173,13 +226,39 @@ title(['Step response, K = ' num2str(K)]);
 \centering	\includegraphics[scale=0.5]{step-oba.png}
 \end{frame}
 
+\begin{frame}\frametitle{Zadanie 2}\framesubtitle{Dobór regulatora proporcjonalnego - porównanie}
+Z uzyskanych systemów za pomocą polecenia \texttt{pole} obliczone zostają bieguny. Pary sprzężone wynoszą odpowiednio:
+
+\begin{itemize}
+	\item Układ a: $ -0.4505 \pm 0.4504i $ 
+	\item Układ b: $ -1.91 \pm 1.9091i $
+\end{itemize}
+
+Częstotliwości własne:
+\begin{itemize}
+	\item Układ a: $ |-0.4505 \pm 0.4504| \approx 0.0001 $
+	\item Układ b: $ |-1.91 \pm 1.0901| \approx 0.8199 $
+\end{itemize}
+
+
+\end{frame}
+
 \begin{frame}\frametitle{Zadanie 2}\framesubtitle{Dobór regulatora proporcjonalnego - wnioski}
 	\begin{itemize}
 		\item Układ zamknięty z zadanym współczynnikiem tłumienia, z kompensatorem oraz bez niego jest stabilny.
 		\item Dodanie kompensatora do systemu spowodowało polepszenie właściwości dynamicznych układu - szybszą stabilizację.
-		\item 
+		\item Układ b wykonuje szybsze drgania w stanie stabilnym.
 	\end{itemize}
 \end{frame}
 
+\begin{frame}\frametitle{Bibliografia}\framesubtitle{}
+	\begin{itemize}
+		\item \textit{,,Metoda projektowania układów regulacji za pomocą linii pierwiastkowych''} - dr inż. Maciej Klemiato
+		
+		\item Wikipedia: hasło \textit{,,Częstość własna''}
+		
+		\item berleburger.com: hasło \textit{,,Częstotliwość własna''}
+	\end{itemize}
+\end{frame}
 
 \end{document}
